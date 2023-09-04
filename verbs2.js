@@ -2,7 +2,7 @@ const verbs2Sentences = {
     "She starts eating fried chicken": ["Dia memulai makan ayam goreng"],
     "I ask for food from the store": ["Saya meminta makanan di toko", "Aki meminta makanan di toko"],
     "We throw the ball": ["Kami melempar bola"],
-    "I see you play at school": ["Saya melihat kamu di sekolah"],
+    "I see you play at school": ["Saya melihat kamu bermain di sekolah"],
     "I want to pay for my breakfast": ["Saya mau membayar sarapan saya", "Saya mau membayar sarapanku"],
     "That building is not open": ["Gedung itu tidak membuka"],
     "Help me": ["Membantu saya"],
