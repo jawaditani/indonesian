@@ -47,25 +47,21 @@ const translations = {
 let unseenSentences = Object.keys(translations);
 let mistakes = [];
 
-let isTranslationChecked = false; // Add this flag
-
 translationInput.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        if (!isTranslationChecked && checkButton.textContent === 'Check') {
-            checkTranslation();
-            isTranslationChecked = true; // Set the flag to true after checking
-        } else if (isTranslationChecked) {
+        if (translationInput.disabled) {
             nextSentence();
-            isTranslationChecked = false; // Reset the flag after moving to the next sentence
+        } else {
+            checkTranslation();
         }
     }
 });
 
 checkButton.addEventListener('click', function() {
-    if (checkButton.textContent === 'Check') {
-        checkTranslation();
-    } else {
+    if (translationInput.disabled) {
         nextSentence();
+    } else {
+        checkTranslation();
     }
 });
 
@@ -96,8 +92,6 @@ function checkTranslation() {
     }
 
     translationInput.disabled = true; // Disable the input box
-    checkButton.textContent = 'Next Sentence';
-    setTimeout(() => checkButton.focus(), 100); // Set focus to the button after a short delay
 }
 
 function nextSentence() {
@@ -111,7 +105,6 @@ function nextSentence() {
         unseenSentences.splice(randomIndex, 1);
         translationInput.value = '';
         result.textContent = '';
-        checkButton.textContent = 'Check';
     } else if (mistakes.length > 0) {
         englishText.textContent = "Let's go through your previous mistakes";
         unseenSentences = [...mistakes];
