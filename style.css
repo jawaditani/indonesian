@@ -1,26 +1,12 @@
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    text-align: center;
+body {
     font-family: Arial, sans-serif;
-}
-
-#translationInput {
-    width: 100%;
-    padding: 10px;
-    margin: 20px 0;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 @keyframes shake {
@@ -40,4 +26,29 @@ button:hover {
 .shake {
     animation: shake 0.5s;
     animation-iteration-count: 1;
+}
+
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+button.category {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button.category:hover {
+    background-color: #0056b3;
 }
