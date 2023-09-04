@@ -67,6 +67,16 @@ checkButton.addEventListener('click', function() {
 
 function checkTranslation() {
     const userInput = sanitizeInput(translationInput.value.trim().toLowerCase());
+    
+    // Check if the input is empty
+    if (userInput === "") {
+        result.textContent = "Type something first!";
+        result.style.color = "red";
+        translationInput.classList.add('shake'); // Add shake effect
+        setTimeout(() => translationInput.classList.remove('shake'), 500); // Remove shake effect after 0.5 seconds
+        return; // Exit the function early
+    }
+
     const correctTranslations = translations[englishText.textContent].map(t => sanitizeInput(t.toLowerCase()));
 
     if (correctTranslations.includes(userInput)) {
