@@ -85,6 +85,9 @@ function checkTranslation() {
 }
 
 function nextSentence() {
+    console.log("Unseen sentences:", unseenSentences); // Log unseen sentences
+    console.log("Mistakes:", mistakes); // Log mistakes
+
     if (unseenSentences.length > 0) {
         const randomIndex = Math.floor(Math.random() * unseenSentences.length);
         const randomSentence = unseenSentences[randomIndex];
