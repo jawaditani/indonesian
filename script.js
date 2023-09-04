@@ -32,6 +32,9 @@ const checkButton = document.querySelector('button');
 const translations = {
     "Hello": ["Halo"],
     "I am 10 years old": ["Umur saya sepuluh tahun", "Umurku sepuluh tahun"],
+    "I want to eat fried rice": ["Saya mau makan nasi goreng"],
+    "Hello, how are you?": ["Halo, apa kabar?"],
+    "That cat is over there": ["Kucing itu di sana"],
     // ... add more translations
 };
 
