@@ -15,7 +15,7 @@ const verbs3Sentences = {
     "I finished reading": ["Saya selesai membaca"],
     "Sorry, you're wrong": ["Maaf kamu salah"],
     "He writes menus": ["Dia menulis menu", "Dia menulis menu menu", "Dia menulis menu-menu"],
-    "I like the letter that you wrote me": ["Saya suka surat yang kamu tulis untuk saya"],
+    "I like your letter": ["Saya suka suratmu", "Saya suka surat kamu"],
     "I cannot enter": ["Saya tidak bisa masuk"],
     "I can wear this belt": ["Saya bisa memakai sabuk ini"],
 };
