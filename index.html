@@ -1,54 +1,52 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-2px, 0px) rotate(1deg); }
-    30% { transform: translate(1px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-1px, 1px) rotate(0deg); }
-    70% { transform: translate(1px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indonesian Translation Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-.shake {
-    animation: shake 0.5s;
-    animation-iteration-count: 1;
-}
+<body>
+  <div class="container">
+    <h2 id="pageTitle">Select a Category</h2>
+    <div id="mainCategories">
+      <button onclick="loadVerbs1()">Verbs 1</button>
+      <button onclick="loadVerbs2()">Verbs 2</button>
+      <button onclick="loadVerbs3()">Verbs 3</button>
+      <button onclick="startLocationsExercise()">Location</button>
+      <button onclick="startFoodAndBeverageExercise()">Food & Beverage</button>
+      <button onclick="startClothingExercise()">Clothing</button>
+      <button onclick="startQuestionsExercise()">Questions</button>
+    </div>
+    <div id="subcategories"></div>
+    <div id="exerciseArea">
+      <p id="englishText"></p>
+      
+      <!-- Instruction Area -->
+      <p id="instruction">Press 'Enter' to check</p>
+      
+      <input type="text" id="translationInput" placeholder="Enter Indonesian translation">
+      <p id="result"></p>
+      
+      <!-- Scoreboard Area -->
+      <div id="scoreboard">
+          <p>Correct: <span id="correctCount">0</span></p>
+          <p>Correct (with typo): <span id="typoCount">0</span></p>
+          <p>Incorrect: <span id="incorrectCount">0</span></p>
+          <p>Total: <span id="totalCount">0</span></p>
+      </div>
+    </div>
+  </div>
+  <script src="verbs1.js"></script>
+  <script src="verbs2.js"></script>
+  <script src="verbs3.js"></script>
+  <script src="location.js"></script>
+  <script src="foodAndBeverage.js"></script>
+  <script src="clothing.js"></script>
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
 
-
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-button.category {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    background-color: #007BFF;
-    color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-button.category:hover {
-    background-color: #0056b3;
-}
+</html>
