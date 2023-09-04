@@ -12,6 +12,6 @@ const foodAndBeverageSentences = {
     "The cat and dog drink water": ["Kucing dan anjing minum air"],
 };
 
-function loadFoodAndBeverageSentences() {
+//function loadFoodAndBeverageSentences() {
 
 }
