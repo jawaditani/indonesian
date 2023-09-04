@@ -1,11 +1,17 @@
 const foodAndBeverageSentences = {
-    "English food sentence 1": ["Indonesian translation 1a", "Indonesian translation 1b"],
-    "English beverage sentence 2": ["Indonesian translation 2"],
-    // ... add more sentences for food and beverages
+    "I like oranges, you like appels": ["Saya suka jeruk jeruk kamu suka apel apel", "Saya suka jeruk kamu suka apel"],
+    "This cake is delicious": ["Kuenya enak", "Kue ini enak"],
+    "How much is this breakfast": ["Berapa harga sarapan ini"];
+    "I bought the friend chicken from that shop": ["Saya membeli ayam goreng dari toko itu"],
+    "I want to ask for sweet strawberry": ["Saya mau meminta stroberi manis"],
+    "Rice with salt and pepper": ["Nasi dengan garam dan merica"],
+    "Chicken and meat with chili sauce": ["Ayam dan daging dengan sambal"],
+    "Hot tomato soup": ["Sup tomat panas"],
+    "Ice tea": ["Es teh"],
+    "They drink water, we drink coffee": ["Mereka minum air kami minum kopi"],
+    "The cat and dog drink water": ["Kucing dan anjing minum air"],
 };
 
 function loadFoodAndBeverageSentences() {
-    // This function will be responsible for loading the sentences from the food & beverage category
-    // and starting the exercise.
-    // We'll implement this when integrating with the main script.
+
 }
