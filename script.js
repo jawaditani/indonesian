@@ -16,7 +16,7 @@ let isChecking = false; // A flag to determine if we're in the checking phase or
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter' && canPressEnter) {
         canPressEnter = false;
-        setTimeout(() => canPressEnter = true, 2000); // Re-enable after 2 seconds
+        setTimeout(() => canPressEnter = true, 1000); // Re-enable after 1 second
 
         if (isChecking) {
             nextSentence();
@@ -28,6 +28,30 @@ document.addEventListener('keydown', function(event) {
 
 function sanitizeInput(str) {
     return str.replace(/[?,!-]/g, ''); // Removes ?, !, , and -
+}
+
+function levenshteinDistance(a, b) {
+    const matrix = [];
+
+    for (let i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+    }
+
+    for (let j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+    }
+
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1));
+            }
+        }
+    }
+
+    return matrix[b.length][a.length];
 }
 
 function checkTranslation() {
@@ -44,20 +68,21 @@ function checkTranslation() {
 
     const correctTranslations = currentSentences[englishText.textContent].map(t => sanitizeInput(t.toLowerCase()));
 
-    if (correctTranslations.includes(userInput)) {
-        result.textContent = "Correct!";
-        result.style.color = "green";
-        correctCount++;
-    } else if (correctTranslations.some(correct => levenshteinDistance(correct, userInput) === 1)) {
-        result.textContent = "Correct (typo, but we'll forgive you)";
-        result.style.color = "orange";
-        typoCount++;
-    } else {
-        result.textContent = "Incorrect. Try again.";
-        result.style.color = "red";
-        mistakes.push(englishText.textContent);
-        incorrectCount++;
-    }
+   if (correctTranslations.includes(userInput)) {
+    result.textContent = "Correct!";
+    result.style.color = "green";
+    correctCount++;
+} else if (correctTranslations.some(correct => levenshteinDistance(correct, userInput) === 1)) {
+    result.textContent = "Correct (typo, but we'll forgive you)";
+    result.style.color = "orange";
+    typoCount++;
+} else {
+    result.textContent = "Incorrect. Try again.";
+    result.style.color = "red";
+    mistakes.push(englishText.textContent);
+    incorrectCount++;
+}
+
     // Update the scoreboard
     document.getElementById('correctCount').textContent = correctCount;
     document.getElementById('typoCount').textContent = typoCount;
@@ -116,6 +141,7 @@ function startExercise() {
 function nextSentence() {
     translationInput.disabled = false; // Re-enable the input box
     translationInput.focus(); // Set focus back to the input field
+    isChecking = false; // Reset the isChecking flag
 
     if (unseenSentences.length > 0) {
         const randomIndex = Math.floor(Math.random() * unseenSentences.length);
