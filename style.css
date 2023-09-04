@@ -1,22 +1,44 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; /* light gray background for contrast */
+}
+
 .container {
     max-width: 600px;
-    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    background-color: #fff; /* white background for the container */
     text-align: center;
-    font-family: Arial, sans-serif;
+}
+
+#englishText {
+    font-size: 24px; /* increased font size */
+    margin-bottom: 20px;
 }
 
 #translationInput {
     width: 100%;
-    padding: 10px;
+    padding: 15px; /* increased padding */
+    font-size: 18px; /* increased font size */
     margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* rounded corners for the input */
 }
 
 button {
     padding: 10px 20px;
+    font-size: 18px; /* increased font size */
     background-color: #007BFF;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 4px; /* rounded corners for the button */
 }
 
 button:hover {
