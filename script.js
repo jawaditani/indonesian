@@ -47,12 +47,16 @@ const translations = {
 let unseenSentences = Object.keys(translations);
 let mistakes = [];
 
+let isTranslationChecked = false; // Add this flag
+
 translationInput.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        if (checkButton.textContent === 'Check') {
+        if (!isTranslationChecked && checkButton.textContent === 'Check') {
             checkTranslation();
-        } else {
+            isTranslationChecked = true; // Set the flag to true after checking
+        } else if (isTranslationChecked) {
             nextSentence();
+            isTranslationChecked = false; // Reset the flag after moving to the next sentence
         }
     }
 });
