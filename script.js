@@ -47,12 +47,12 @@ const translations = {
 let unseenSentences = Object.keys(translations);
 let mistakes = [];
 
-translationInput.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        if (translationInput.disabled) {
-            nextSentence();
-        } else {
+        if (document.getElementById('instruction').textContent === "Press 'Enter' to check") {
             checkTranslation();
+        } else {
+            nextSentence();
         }
     }
 });
