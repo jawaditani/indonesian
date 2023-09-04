@@ -1,24 +1,22 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const translationForm = document.getElementById("translationForm");
-    const userTranslationInput = document.getElementById("userTranslation");
-    const checkButton = document.getElementById("checkButton");
-    const resultDiv = document.getElementById("result");
+const englishText = document.getElementById('englishText');
+const translationInput = document.getElementById('translationInput');
+const result = document.getElementById('result');
 
-    const sentences = [
-        { english: "Hello, how are you?", indonesian: "Halo, apa kabar?" },
-        // Add more sentences and translations here
-    ];
+const translations = {
+    "Hello": "Halo",
+    // Add more translations as needed
+    // "English": "Indonesian"
+};
 
-    checkButton.addEventListener("click", function () {
-        const userTranslation = userTranslationInput.value.trim();
-        const currentSentence = sentences[0]; // For simplicity, using the first sentence
+function checkTranslation() {
+    const userInput = translationInput.value.trim().toLowerCase();
+    const correctTranslation = translations[englishText.textContent].toLowerCase();
 
-        if (userTranslation === currentSentence.indonesian) {
-            resultDiv.textContent = "Correct!";
-            resultDiv.style.color = "green";
-        } else {
-            resultDiv.textContent = "Incorrect. The correct translation is: " + currentSentence.indonesian;
-            resultDiv.style.color = "red";
-        }
-    });
-});
+    if (userInput === correctTranslation) {
+        result.textContent = "Correct!";
+        result.style.color = "green";
+    } else {
+        result.textContent = "Incorrect. Try again.";
+        result.style.color = "red";
+    }
+}
