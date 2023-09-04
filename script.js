@@ -81,12 +81,12 @@ function checkTranslation() {
         mistakes.push(englishText.textContent);
     }
 
+    translationInput.disabled = true; // Disable the input box
     checkButton.textContent = 'Next Sentence';
 }
 
 function nextSentence() {
-    console.log("Unseen sentences:", unseenSentences); // Log unseen sentences
-    console.log("Mistakes:", mistakes); // Log mistakes
+    translationInput.disabled = false; // Re-enable the input box
 
     if (unseenSentences.length > 0) {
         const randomIndex = Math.floor(Math.random() * unseenSentences.length);
