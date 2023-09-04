@@ -1,5 +1,16 @@
 const verbs2Sentences = {
-    "She dances": ["Dia menari"],
-    "They jump": ["Mereka melompat"],
-    // ... add more translations for Verbs 2
+    "She starts eating fried chicken": ["Dia memulai makan ayam goreng"],
+    "I ask for food from the store": ["Saya meminta makanan di toko", "Aki meminta makanan di toko"],
+    "We throw the ball": ["Kami melempar bola"],
+    "I see you play at school": ["Saya melihat kamu di sekolah"],
+    "I want to pay for my breakfast": ["Saya mau membayar sarapan saya", "Saya mau membayar sarapanku"],
+    "That building is not open": ["Gedung itu tidak membuka"],
+    "Help me": ["Membantu saya"],
+    "I can give flowers to you": ["Saya bisa memberi bunga kamu"],
+    "I want to ask for ice tea because I like it": ["Saya mau meminta es teh karena saya suka itu"],
+    "We open those shops": ["Kami membuka toko toko itu"],
+    "I see them play": ["Saya melihat mereka bermain"],
+    "You start talking, I start eating": ["Kamu memulai berbicara saya memulai makan"],
+    "He helps us go there": ["Dia membantu kami pergi ke sana"],
+    "I hope they pay": ["Saya berharap mereka membayar"],
 };
