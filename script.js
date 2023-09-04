@@ -37,7 +37,7 @@ const checkButton = document.querySelector('button');
 const translations = {
     "Hello": ["Halo"],
     "I am 10 years old": ["Umur saya sepuluh tahun", "Umurku sepuluh tahun"],
-    "I want to eat friend rice with ice tea": ["Saya mau makan nasi goreng dengan es teh"],
+    "I want to eat fried rice with ice tea": ["Saya mau makan nasi goreng dengan es teh"],
     "That cat is over there": ["Kucing itu di sana"],
     "They come and go": ["Mereka datang dan pergi"],
     "She like chicken soup because I like orange juice": ["Dia suka sup ayam karena saya suka jus jeruk"],
