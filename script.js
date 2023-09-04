@@ -95,6 +95,7 @@ function checkTranslation() {
     checkButton.textContent = 'Next Sentence';
 }
 
+
 function nextSentence() {
     translationInput.disabled = false; // Re-enable the input box
 
