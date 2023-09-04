@@ -93,11 +93,13 @@ function checkTranslation() {
 
     translationInput.disabled = true; // Disable the input box
     checkButton.textContent = 'Next Sentence';
+    checkButton.focus(); // Set focus to the button
 }
-
 
 function nextSentence() {
     translationInput.disabled = false; // Re-enable the input box
+    translationInput.focus(); // Set focus back to the input field
+}
 
     if (unseenSentences.length > 0) {
         const randomIndex = Math.floor(Math.random() * unseenSentences.length);
