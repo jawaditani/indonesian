@@ -93,7 +93,7 @@ function checkTranslation() {
 
     translationInput.disabled = true; // Disable the input box
     checkButton.textContent = 'Next Sentence';
-    checkButton.focus(); // Set focus to the button
+    setTimeout(() => checkButton.focus(), 100); // Set focus to the button after a short delay
 }
 
 function nextSentence() {
