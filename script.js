@@ -47,7 +47,7 @@ const translations = {
 let unseenSentences = Object.keys(translations);
 let mistakes = [];
 
-translationInput.addEventListener('keyup', function(event) {
+translationInput.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         if (checkButton.textContent === 'Check') {
             checkTranslation();
