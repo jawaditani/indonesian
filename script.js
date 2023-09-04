@@ -26,6 +26,10 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+function sanitizeInput(str) {
+    return str.replace(/[?,!-]/g, ''); // Removes ?, !, , and -
+}
+
 function checkTranslation() {
     const userInput = sanitizeInput(translationInput.value.trim().toLowerCase());
     
