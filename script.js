@@ -48,6 +48,7 @@ document.getElementById('muteButton').addEventListener('click', function() {
 
 // Function to play the correct sound
 function playCorrectSound() {
+    console.log("Trying to play correct sound");
     if (!isMuted) {
         const sound = document.getElementById('correctSound');
     sound.play().catch(error => {
@@ -58,6 +59,7 @@ function playCorrectSound() {
 
 // Function to play the incorrect sound
 function playIncorrectSound() {
+    console.log("Trying to play incorrect sound");
     if (!isMuted) {
         const sound = document.getElementById('incorrectSound');
         sound.play().catch(error => {
@@ -68,6 +70,7 @@ function playIncorrectSound() {
 
 // Function to play a random hover sound
 function playRandomHoverSound() {
+    console.log("Trying to play hover sound");
     if (!isMuted) {
         const hoverSounds = ['hoverSound1', 'hoverSound2', 'hoverSound3', 'hoverSound4'];
         const randomSound = hoverSounds[Math.floor(Math.random() * hoverSounds.length)];
@@ -77,6 +80,7 @@ function playRandomHoverSound() {
 
 // Function to play the selection sound
 function playSelectionSound() {
+    console.log("Trying to play selection sound");
     if (!isMuted) document.getElementById('selectionSound').play();
 }
 
