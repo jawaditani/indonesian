@@ -33,11 +33,7 @@ document.getElementById('muteButton').addEventListener('click', function() {
     isMuted = !isMuted; // Toggle the mute state
 
     // Update button text based on mute state
-    if (isMuted) {
-        this.textContent = "Unmute";
-    } else {
-        this.textContent = "Mute";
-    }
+    this.textContent = isMuted ? "Unmute" : "Mute"; 
 
     // Update all audio elements to reflect the new mute state
     const audios = document.querySelectorAll('audio');
