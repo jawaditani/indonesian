@@ -112,7 +112,7 @@ function checkTranslation() {
     result.textContent = "Correct!";
     result.style.color = "green";
     correctCount++;
-} else if (correctTranslations.some(correct => levenshteinDistance(correct, userInput) === 1)) {\
+} else if (correctTranslations.some(correct => levenshteinDistance(correct, userInput) === 1)) {
     playCorrectSound();
     result.textContent = "Correct (typo, but we'll forgive you)";
     result.style.color = "orange";
