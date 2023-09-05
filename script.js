@@ -29,6 +29,27 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+// Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+    // Wait for 2-3 seconds after the page has loaded
+    setTimeout(function() {
+        const muteButton = document.getElementById('muteButton');
+        muteButton.classList.add('animate__animated', 'animate__shakeY');
+    }, 3000);  // 3000 milliseconds = 3 seconds
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        const muteButton = document.getElementById('muteButton');
+        muteButton.classList.add('animate__animated', 'animate__shakeY');
+
+        // Remove the animation classes after it completes
+        muteButton.addEventListener('animationend', function() {
+            muteButton.classList.remove('animate__animated', 'animate__shakeY');
+        });
+    }, 3000);
+});
+
 document.getElementById('muteButton').addEventListener('click', function() {
     isMuted = !isMuted; // Toggle the mute state
 
