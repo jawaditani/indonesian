@@ -29,6 +29,11 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+document.getElementById('startButton').addEventListener('click', function() {
+    // Initialize your audio elements and other functionalities here
+    this.style.display = 'none'; // Hide the start button after it's clicked
+});
+
 document.getElementById('muteButton').addEventListener('click', function() {
     isMuted = !isMuted; // Toggle the mute state
     this.textContent = isMuted ? "Unmute" : "Mute"; // Update button text based on mute state
@@ -43,12 +48,22 @@ document.getElementById('muteButton').addEventListener('click', function() {
 
 // Function to play the correct sound
 function playCorrectSound() {
-    if (!isMuted) document.getElementById('correctSound').play();
+    if (!isMuted) {
+        const sound = document.getElementById('correctSound');
+    sound.play().catch(error => {
+        console.error("Error playing correct sound:", error);
+        });
+    }
 }
 
 // Function to play the incorrect sound
 function playIncorrectSound() {
-    if (!isMuted) document.getElementById('incorrectSound').play();
+    if (!isMuted) {
+        const sound = document.getElementById('incorrectSound');
+        sound.play().catch(error => {
+        console.error("Error playing correct sound:", error);
+        });
+    }
 }
 
 // Function to play a random hover sound
