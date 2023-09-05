@@ -29,10 +29,6 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-document.getElementById('startButton').addEventListener('click', function() {
-    // Initialize your audio elements and other functionalities here
-    this.style.display = 'none'; // Hide the start button after it's clicked
-});
 
 document.getElementById('muteButton').addEventListener('click', function() {
     isMuted = !isMuted; // Toggle the mute state
