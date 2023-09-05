@@ -4,7 +4,7 @@ let mistakes = [];
 let unseenSentences = [];
 
 // Is mute state
-let isMuted = false;
+let isMuted = true;
 
 // Score variables
 let correctCount = 0;
@@ -32,6 +32,13 @@ document.addEventListener('keydown', function(event) {
 document.getElementById('muteButton').addEventListener('click', function() {
     isMuted = !isMuted; // Toggle the mute state
     this.textContent = isMuted ? "Unmute" : "Mute"; // Update button text based on mute state
+
+    // Update all audio elements to reflect the new mute state
+    const audios = document.querySelectorAll('audio');
+    audios.forEach(audio => {
+        audio.muted = isMuted;
+    });
+    
 });
 
 // Function to play the correct sound
