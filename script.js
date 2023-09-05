@@ -26,6 +26,42 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+// Hover over sound
+function playRandomHoverSound() {
+    const hoverSounds = [hoverSound1, hoverSound2, hoverSound3, hoverSound4];
+    const randomSound = hoverSounds[Math.floor(Math.random() * hoverSounds.length)];
+    randomSound.play();
+}
+
+// Function to play the correct sound
+function playCorrectSound() {
+    document.getElementById('correctSound').play();
+}
+
+// Function to play the incorrect sound
+function playIncorrectSound() {
+    document.getElementById('incorrectSound').play();
+}
+
+// Function to play a random hover sound
+function playRandomHoverSound() {
+    const hoverSounds = ['hoverSound1', 'hoverSound2', 'hoverSound3', 'hoverSound4'];
+    const randomSound = hoverSounds[Math.floor(Math.random() * hoverSounds.length)];
+    document.getElementById(randomSound).play();
+}
+
+// Function to play the selection sound
+function playSelectionSound() {
+    document.getElementById('selectionSound').play();
+}
+
+// Add hover sound event listeners to the buttons
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener('mouseover', playRandomHoverSound);
+});
+
+
 function sanitizeInput(str) {
     return str.replace(/[?,!-]/g, ''); // Removes ?, !, , and -
 }
@@ -65,18 +101,21 @@ function checkTranslation() {
         setTimeout(() => translationInput.classList.remove('shake'), 500);
         return;
     }
-
+    
     const correctTranslations = currentSentences[englishText.textContent].map(t => sanitizeInput(t.toLowerCase()));
 
    if (correctTranslations.includes(userInput)) {
+    playCorrectSound();
     result.textContent = "Correct!";
     result.style.color = "green";
     correctCount++;
-} else if (correctTranslations.some(correct => levenshteinDistance(correct, userInput) === 1)) {
+} else if (correctTranslations.some(correct => levenshteinDistance(correct, userInput) === 1)) {\
+    playCorrectSound();
     result.textContent = "Correct (typo, but we'll forgive you)";
     result.style.color = "orange";
     typoCount++;
 } else {
+    playIncorrectSound();
     result.textContent = "Incorrect. Try again.";
     result.style.color = "red";
     mistakes.push(englishText.textContent);
@@ -96,37 +135,44 @@ function checkTranslation() {
 
 // Function to start the Verbs exercise
 function loadVerbs1() {
+    playSelectionSound();
     currentSentences = verbs1Sentences;
     startExercise();
 }
 
 function loadVerbs2() {
+    playSelectionSound();
     currentSentences = verbs2Sentences;
     startExercise();
 }
 
 function loadVerbs3() {
+    playSelectionSound();
     currentSentences = verbs3Sentences;
     startExercise();
 }
 
 // ... Similarly, you'll have functions for other categories:
 function startLocationsExercise() {
+    playSelectionSound();
     currentSentences = {...locationSentences};
     startExercise();
 }
 
 function startClothingExercise() {
+    playSelectionSound();
     currentSentences = {...clothingSentences};
     startExercise();
 }
 
 function startFoodAndBeverageExercise() {
+    playSelectionSound();
     currentSentences = {...foodAndBeverageSentences};
     startExercise();
 }
 
 function startQuestionsExercise() {
+    playSelectionSound();
     currentSentences = {...questionSentences};
     startExercise();
 }
