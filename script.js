@@ -3,6 +3,9 @@ let currentSentences = {};
 let mistakes = [];
 let unseenSentences = [];
 
+// Is mute state
+let isMuted = false;
+
 // Score variables
 let correctCount = 0;
 let typoCount = 0;
@@ -26,33 +29,33 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Hover over sound
-function playRandomHoverSound() {
-    const hoverSounds = [hoverSound1, hoverSound2, hoverSound3, hoverSound4];
-    const randomSound = hoverSounds[Math.floor(Math.random() * hoverSounds.length)];
-    randomSound.play();
-}
+document.getElementById('muteButton').addEventListener('click', function() {
+    isMuted = !isMuted; // Toggle the mute state
+    this.textContent = isMuted ? "Unmute" : "Mute"; // Update button text based on mute state
+});
 
 // Function to play the correct sound
 function playCorrectSound() {
-    document.getElementById('correctSound').play();
+    if (!isMuted) document.getElementById('correctSound').play();
 }
 
 // Function to play the incorrect sound
 function playIncorrectSound() {
-    document.getElementById('incorrectSound').play();
+    if (!isMuted) document.getElementById('incorrectSound').play();
 }
 
 // Function to play a random hover sound
 function playRandomHoverSound() {
-    const hoverSounds = ['hoverSound1', 'hoverSound2', 'hoverSound3', 'hoverSound4'];
-    const randomSound = hoverSounds[Math.floor(Math.random() * hoverSounds.length)];
-    document.getElementById(randomSound).play();
+    if (!isMuted) {
+        const hoverSounds = ['hoverSound1', 'hoverSound2', 'hoverSound3', 'hoverSound4'];
+        const randomSound = hoverSounds[Math.floor(Math.random() * hoverSounds.length)];
+        document.getElementById(randomSound).play();
+    }
 }
 
 // Function to play the selection sound
 function playSelectionSound() {
-    document.getElementById('selectionSound').play();
+    if (!isMuted) document.getElementById('selectionSound').play();
 }
 
 // Add hover sound event listeners to the buttons
