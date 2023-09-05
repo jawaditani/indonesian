@@ -29,17 +29,21 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-
 document.getElementById('muteButton').addEventListener('click', function() {
     isMuted = !isMuted; // Toggle the mute state
-    this.textContent = isMuted ? "Unmute" : "Mute"; // Update button text based on mute state
+
+    // Update button text based on mute state
+    if (isMuted) {
+        this.textContent = "Unmute";
+    } else {
+        this.textContent = "Mute";
+    }
 
     // Update all audio elements to reflect the new mute state
     const audios = document.querySelectorAll('audio');
     audios.forEach(audio => {
         audio.muted = isMuted;
     });
-    
 });
 
 // Function to play the correct sound
