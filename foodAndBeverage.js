@@ -11,5 +11,3 @@ const foodAndBeverageSentences = {
     "They drink water, we drink coffee": ["Mereka minum air kami minum kopi"],
     "The cat and dog drink water": ["Kucing dan anjing minum air"],
 };
-
-//function loadFoodAndBeverageSentences() {}
