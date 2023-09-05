@@ -66,9 +66,16 @@ function playIncorrectSound() {
 
 // Function to play a random hover sound
 function playRandomHoverSound() {
-    console.log("Trying to play hover sound");
     if (!isMuted) {
+        // Stop all hover sounds
         const hoverSounds = ['hoverSound1', 'hoverSound2', 'hoverSound3', 'hoverSound4'];
+        hoverSounds.forEach(soundId => {
+            const audio = document.getElementById(soundId);
+            audio.pause(); // Stop the sound
+            audio.currentTime = 0; // Reset the sound to the beginning
+        });
+
+        // Play a random hover sound
         const randomSound = hoverSounds[Math.floor(Math.random() * hoverSounds.length)];
         document.getElementById(randomSound).play();
     }
@@ -232,8 +239,3 @@ function nextSentence() {
         result.textContent = '';
     }
 }
-
-// ... Rest of the script for checking translations, Levenshtein distance, etc., remains unchanged ...
-
-// You don't need to call nextSentence() at the end of this script anymore, as it will be called when a category is selected.
-
